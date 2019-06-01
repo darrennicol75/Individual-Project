@@ -37,22 +37,29 @@ class Equipment
     return results.map { |customer| Customer.new(customer) }
   end
 
+  def self.destroy(id)
+    sql = "DELETE FROM equipment
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
   def self.all()
-    sql = "SELECT * FROM customers"
+    sql = "SELECT * FROM equipment"
     results = SqlRunner.run( sql )
-    return results.map { |hash| Customer.new( hash ) }
+    return results.map { |hash| Equipment.new( hash ) }
   end
 
   def self.find( id )
-    sql = "SELECT * FROM customers
+    sql = "SELECT * FROM equipment
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return Customer.new( results.first )
+    return Equipment.new( results.first )
   end
 
   def self.delete_all
-    sql = "DELETE FROM customers"
+    sql = "DELETE FROM equipment"
     SqlRunner.run( sql )
   end
 

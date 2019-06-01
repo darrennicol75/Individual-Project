@@ -1,0 +1,34 @@
+<h1>Surf Rental!</h1>
+
+<form action="/rentals" method="post">
+  <label>
+  Select equipment:
+    <select name="equipment_id">
+      <% for equipment in @equipment %>
+      <option value="<%= equipment.id %>"><%= equipment.model %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a customer:
+    <select name="customer_id">
+      <% for customer in @customers %>
+      <option value="<%= customer.id %>"><%= customer.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+<!-- The below is only providing an option of4? -->
+
+  <label>
+    Select a quantity:
+    <select name="quantity">
+      <% for quantity in @equipment %>
+      <option value="<%= equipment.id %>"><%= equipment.quantity %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="Hire!">
+</form>

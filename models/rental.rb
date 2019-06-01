@@ -2,26 +2,30 @@ require_relative( '../db/sql_runner' )
 
 class Rental
 
-  attr_reader( :equipment_id, :customers_id, :id )
+  attr_reader( :equipment_id, :customers_id, :hire_duration, :quantity, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @equipment_id = options['equipment_id'].to_i
     @customer_id = options['customers_id'].to_i
+    @hire_duration = options['hire_duration'].to_i
+    @quantity = options['quantity'].to_i
   end
 
   def save()
     sql = "INSERT INTO rentals
     (
       equipment_id,
-      customers_id
+      customers_id,
+      hire_duration,
+      quantity
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@equipment_id, @customer_id]
+    values = [@equipment_id, @customer_id, @hire_duration, @quantity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

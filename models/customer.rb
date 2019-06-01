@@ -38,6 +38,13 @@ class Customer
     return results.map { |equipment| Equipment.new(equipment) }
   end
 
+  def self.destroy(id)
+    sql = "DELETE FROM customers
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
   def self.all()
     sql = "SELECT * FROM customers"
     results = SqlRunner.run( sql )
@@ -55,6 +62,10 @@ class Customer
   def self.delete_all
     sql = "DELETE FROM customers"
     SqlRunner.run( sql )
+  end
+
+  def self.map_items(customer_data)
+    return customer_data.map { |customer| Customer.new(customer) }
   end
 
 end

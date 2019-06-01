@@ -23,5 +23,7 @@ CREATE TABLE rentals
 (
   id SERIAL8 primary key,
   customers_id INT8 references customers(id),
-  equipment_id INT8 references equipment(id)
+  equipment_id INT8 references equipment(id),
+  hire_duration INT4,
+  quantity INT2 
 );

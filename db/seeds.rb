@@ -9,7 +9,7 @@ Customer.delete_all()
 
 equipment1 = Equipment.new({
   "model" => "Quicksilver RX10",
-  "category" => "Surf",
+  "category" => "Surf Board",
   "quantity" => 6,
   "day_rate" => 10
 })
@@ -18,7 +18,7 @@ equipment1.save()
 
 equipment2 = Equipment.new({
   "model" => "O'Neill slingshot",
-  "category" => "Surf",
+  "category" => "Surf Board",
   "quantity" => 6,
   "day_rate" => 13
 })
@@ -27,7 +27,7 @@ equipment2.save()
 
 equipment3 = Equipment.new({
   "model" => "Quicksilver Waterman",
-  "category" => "Surf",
+  "category" => "SUP Board",
   "quantity" => 4,
   "day_rate" => 11
 })
@@ -36,7 +36,7 @@ equipment3.save()
 
 equipment4 = Equipment.new({
   "model" => "Hurley Slater",
-  "category" => "Surf",
+  "category" => "Wind Surf",
   "quantity" => 4,
   "day_rate" => 15
 })
@@ -77,28 +77,36 @@ customer4.save()
 
 rental1 = Rental.new({
   "customers_id" => customer1.id,
-  "equipment_id" => equipment4.id
+  "equipment_id" => equipment4.id,
+  "hire_duration" => 14,
+  "quantity" => 1
 })
 
 rental1.save()
 
 rental2 = Rental.new({
   "customers_id" => customer2.id,
-  "equipment_id" => equipment3.id
+  "equipment_id" => equipment3.id,
+  "hire_duration" => 7,
+  "quantity" => 2
 })
 
 rental2.save()
 
 rental3 = Rental.new({
   "customers_id" => customer3.id,
-  "equipment_id" => equipment2.id
+  "equipment_id" => equipment2.id,
+  "hire_duration" => 21,
+  "quantity" => 1
 })
 
 rental3.save()
 
 rental4 = Rental.new({
   "customers_id" => customer4.id,
-  "equipment_id" => equipment1.id
+  "equipment_id" => equipment1.id,
+  "hire_duration" => 28,
+  "quantity" => 2
 })
 
 rental4.save()

@@ -1,0 +1,32 @@
+<h1>Equipment</h1>
+
+<table>
+  <tr>
+    <th>Model</th>
+    <th></th>
+    <th>Category</th>
+    <th></th>
+    <th>Day_rate</th>
+    <th></th>
+    <th>Quantity</th>
+  </tr>
+  <% for equipment in @equipment %>
+  <tr>
+    <td><a href="/equipment/<%= equipment.id %>"><%= equipment.model %></a></td>
+    <td>|</td>
+    <td><%= equipment.category %></td>
+    <td>|</td>
+    <td><%= equipment.day_rate %></td>
+    <td>|</td>
+    <td><%= equipment.quantity %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/equipment/new">New Equipment</a>
+</p>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/equipment/delete">Delete equipment</a>
+</p>

@@ -1,0 +1,19 @@
+<h1>Rentals</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/rentals/new">New rental!</a>
+</p>
+
+<ul>
+  <% for rental in @rentals %>
+  <li>
+  <p><%= rental.customer.name %> <%= @actions.sample %> <%= rental.equipment.model %> </p>
+    <p>
+      <form action="/rentals/<%= rental.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+
+    </p>
+  </li>
+  <% end %>
+</ul>

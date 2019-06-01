@@ -1,0 +1,9 @@
+<h1>Equipment <%= @equipment.name %></h1>
+
+<p>Category: <%= @equipment.name %></p>
+
+<ul>
+  <% @equipment.customers.each do |customer| %>
+  <li><%= customer.name %></li>
+  <% end %>
+</ul>

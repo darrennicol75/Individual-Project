@@ -1,0 +1,28 @@
+<h1>Customers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Account Number</th>
+    <th></th>
+    <th>Shipping Info</th>
+  </tr>
+  <% for customer in @customers %>
+  <tr>
+    <td><a href="/customers/<%= customer.id %>"><%= customer.name %></a></td>
+    <td>|</td>
+    <td><%= customer.account_number %></td>
+    <td>|</td>
+    <td><%= customer.shipping_info %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/customers/new">New Customer</a>
+</p>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/customers/delete">Delete customer</a>
+</p>
