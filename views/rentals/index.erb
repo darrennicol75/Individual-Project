@@ -6,14 +6,23 @@
 
 <ul>
   <% for rental in @rentals %>
-  <li>
-  <p><%= rental.customer.name %> <%= @actions.sample %> <%= rental.equipment.model %> </p>
-    <p>
+  <% for customer in rental.customers %>
+
+
+  <p><%= customer.name %> <%= @actions.sample %>
+    <% end %>
+    <% for item in rental.equipment %>
+    <%= item.model %> </p>
+    <% end %>
       <form action="/rentals/<%= rental.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
+      <form action="/rentals/<%= rental.id %>/edit" method="GET">
+        <input class="btn btn--danger" type="submit" value="edit/return" />
+      </form>
+    <% end %>
 
-    </p>
-  </li>
-  <% end %>
 </ul>
+
+
+<!-- #this needs sorted for loop is pulling in wrong info -->

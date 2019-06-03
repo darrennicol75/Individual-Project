@@ -1,3 +1,28 @@
+<form method="post" action="/rentals/<%= @customer.id %>">
+  <label for="name">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name"
+  value="<%= @customer.name %>"
+  />
+
+  <label for="account_number">Account Number:</label>
+  <input
+  type="text"
+  name="account_number"
+  id="account_number"
+  value="<%= @customer.account_number %>"
+  />
+
+  <label for="shipping_info">Shipping_info:</label>
+  <input
+  type="text"
+  name="shipping_info"
+  id="shipping_info"
+  value="<%= @customer.shipping_info %>"
+  />
+
 <form method="post" action="/equipment/<%= @equipment.id %>">
   <label for="model">Model:</label>
   <input
@@ -31,5 +56,5 @@
   value="<%= @equipment.quantity %>"
   />
 
-  <input type='submit' value="Delete Equipment Details">
+  <input type='submit' value="Edit Rental Details">
 </form>

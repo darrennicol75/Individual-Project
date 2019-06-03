@@ -20,13 +20,32 @@ get '/rentals/new' do
   erb(:"rentals/new")
 end
 
-post '/rentals' do
-  rental = Rental.new(params)
-  rental.save
-  redirect to("/rentals")
+post '/rentals' do #rental that reduces the inventory count
+  @rental = Rental.new(params)
+  @rental.save()
+  @customer = Customer.find(params['customer_id'])
+  @equipment = Equipment.find(params['equipment_id'])
+  @equipment.quantity -= 1 #need to link this dynamically.
+  @equipment.update()
+  erb(:"rentals/confirm")
+end
+
+post '/rentals/returns' do #return that adds back to stock
+  @customer = Customer.find(params['customer_id'])
+  @equipment = Equipment.find(params['equipment_id'])
+  @equipment.quantity += 1
+  @equipment.update()
+  erb(:"rentals/returns")
 end
 
 post '/rentals/:id/delete' do
   Rental.destroy(params[:id])
-  redirect to("/rentals")
+  redirect to '/rentals'
+end
+
+get '/rentals/:id/edit' do
+  @rental = Rental.find(params["id"])
+  binding.pry
+  @customer = Customer.find(@rental.customer_id)
+  erb(:"rentals/edit")
 end

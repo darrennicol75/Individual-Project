@@ -1,18 +1,12 @@
-<h1><%= @customer.name %> (current hires)</h1>
+<h1>Customer <%= @customer.name %></h1>
 
-<p>Account_number: <%= @customer.account_number %></p>
+<p>Account Number: <%= @customer.account_number %></p>
 
-<h3>Rental Category of:</h3>
+<p>Shipping Info: <%= @customer.shipping_info %></p>
 
-<ul>
-  <% @customer.equipment.each do |equipment| %>
-  <li><%= equipment.category %></li>
-  <% end %>
-</ul>
-
-<h3>Model type:</h3>
 
 <ul>
+  <p> Current Account Hires:</p>
   <% @customer.equipment.each do |equipment| %>
   <li><%= equipment.model %></li>
   <% end %>

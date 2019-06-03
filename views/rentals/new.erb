@@ -2,6 +2,15 @@
 
 <form action="/rentals" method="post">
   <label>
+  Select category:
+    <select name="category">
+      <% for equipment in @equipment %>
+      <option value="<%= equipment.id %>"><%= equipment.category %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
   Select equipment:
     <select name="equipment_id">
       <% for equipment in @equipment %>
@@ -19,15 +28,14 @@
     </select>
   </label>
 
-<!-- The below is only providing an option of4? -->
-
   <label>
     Select a quantity:
-    <select name="quantity">
-      <% for quantity in @equipment %>
-      <option value="<%= equipment.id %>"><%= equipment.quantity %></option>
-      <% end %>
-    </select>
+      <input type="number" name ="quantity" min="1" max= "6"></input>
+  </label>
+
+  <label>
+    Select hire duration:
+      <input type="number" name ="hire_duration" min="1" max= "365"></input>
   </label>
 
   <input class="btn btn--action" type='submit' value="Hire!">

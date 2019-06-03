@@ -1,5 +1,5 @@
 body {
-  background: blue url('/images/surf3.gif');
+  background: #8FE388 url('/images/surf1.gif');
   background-size: 100%;
   background-repeat: no-repeat;
   color: papayawhip;
@@ -28,6 +28,29 @@ a, a:link, a:visited {
 a:hover, a:active, a:focus {
   color: black;
 }
+
+
+/* .menu li {
+  display: inline;
+  padding-right: 2em;
+  text-transform: uppercase;
+}
+.menu a {
+  color: #f2f2f2;
+  transition: .5s;
+}
+.menu a:hover {
+  color: white;
+}
+
+.menu {
+  width: 28em;
+  height: 3em;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  background-color: #56bce7;
+} */
+
 
 nav {
   padding: 20px;

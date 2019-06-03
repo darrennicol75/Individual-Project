@@ -15,14 +15,16 @@
     <td><%= customer.account_number %></td>
     <td>|</td>
     <td><%= customer.shipping_info %></td>
+    <p class="btn--wrapper">
+      <a class="btn btn--action" href="/customers/<%= customer.id %>/edit">Edit customer</a>
+    </p>
+    <p class="btn--wrapper">
+      <a class="btn btn--action" href="/customers/<% customer.id %>/delete">Delete Customer</a>
+    </p>
   </tr>
   <% end %>
 </table>
 
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/customers/new">New Customer</a>
-</p>
-
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/customers/delete">Delete customer</a>
 </p>

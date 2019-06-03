@@ -22,8 +22,8 @@ CREATE TABLE equipment
 CREATE TABLE rentals
 (
   id SERIAL8 primary key,
-  customers_id INT8 references customers(id),
-  equipment_id INT8 references equipment(id),
+  customer_id INT8 references customers(id) ON DELETE CASCADE,
+  equipment_id INT8 references equipment(id) ON DELETE CASCADE,
   hire_duration INT4,
-  quantity INT2 
+  quantity INT2
 );

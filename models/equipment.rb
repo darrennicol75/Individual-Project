@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Equipment
 
-  attr_reader( :model, :category, :quantity, :day_rate, :id )
+  attr_accessor( :model, :category, :quantity, :day_rate, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -30,11 +30,35 @@ class Equipment
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE equipment
+    SET
+    (
+      model,
+      category,
+      day_rate,
+      quantity
+    ) =
+    (
+      $1, $2, $3, $4
+    )
+    WHERE id = $5"
+    values = [@model, @category, @day_rate, @quantity, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def customers
-    sql = "SELECT c.* FROM customers c INNER JOIN rentals r ON r.customers_id = c.id WHERE r.equipment_id = $1;"
+    sql = "SELECT c.* FROM customers c INNER JOIN rentals r ON r.customer_id = c.id WHERE r.equipment_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |customer| Customer.new(customer) }
+  end
+
+  def delete()
+    sql = "DELETE FROM equipment
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
   end
 
   def self.destroy(id)
@@ -61,6 +85,10 @@ class Equipment
   def self.delete_all
     sql = "DELETE FROM equipment"
     SqlRunner.run( sql )
+  end
+
+  def self.map_items(equipment_data)
+    return equipment_data.map { |equipment| Equipment.new(equipment) }
   end
 
 end

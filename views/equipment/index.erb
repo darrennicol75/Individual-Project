@@ -19,14 +19,16 @@
     <td><%= equipment.day_rate %></td>
     <td>|</td>
     <td><%= equipment.quantity %></td>
+    <p class="btn--wrapper">
+      <a class="btn btn--action" href="/equipment/<%= equipment.id %>/edit">Edit equipment</a>
+    </p>
+    <form action="/equipment/<%= equipment.id %>/confirm" method="POST">
+      <input class="btn btn--danger" type="submit" value="delete" />
+    </form>
   </tr>
   <% end %>
 </table>
 
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/equipment/new">New Equipment</a>
-</p>
-
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/equipment/delete">Delete equipment</a>
 </p>
