@@ -47,7 +47,7 @@ customer1 = Customer.new({
   "name" => "Kelly Slater",
   "account_number" => 1,
   "shipping_info" => "delivery_usa"
-})
+ })
 
 customer1.save()
 

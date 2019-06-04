@@ -1,6 +1,6 @@
 body {
   background-color: #0678bc;
-  /* background-image: url('/images/surf3.gif'); */
+  background-image: url('/images/surf.gif');
   background-size: 100%;
   background-repeat: no-repeat;
   color: black;
@@ -30,37 +30,14 @@ a:hover, a:active, a:focus {
   color: black;
 }
 
-
-/* .menu li {
-  display: inline;
-  padding-right: 2em;
-  text-transform: uppercase;
-}
-.menu a {
-  color: #f2f2f2;
-  transition: .5s;
-}
-.menu a:hover {
-  color: white;
-}
-
-.menu {
-  width: 28em;
-  height: 3em;
-  border-radius: 0.4em;
-  padding: 0.5em;
-  background-color: #56bce7;
-} */
-
-
 nav {
-  padding: 20px;
-  margin: 20px;
-  padding-centre: 25px;
+  padding: 50px;
+  margin: 50px;
+  padding-centre: 50px;
 }
 
 nav ul li {
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   text-transform: uppercase;
   margin: 0 auto;
 }
