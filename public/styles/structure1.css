@@ -5,7 +5,6 @@ body {
   background-repeat: no-repeat;
   color: black;
   font-family: 'Merriweather', serif;
-  font-size: 1.2em;
   padding: 0px;
   margin: 0px;
 }
@@ -18,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.8em;
-  color: white;
+  color: #0678bc;
   margin-bottom: 20px;
 }
 
@@ -31,18 +30,17 @@ a:hover, a:active, a:focus {
   color: black;
 }
 
-nav {
+/* nav {
   padding: 20px;
   margin: 20px;
   padding-centre: 25px;
-}
+} */
 
-nav ul li {
-  display: inline-block;
-  margin-left: 150px;
-  padding-top: 0px;
-}
-
+/* nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  margin: 0 auto;
+} */
 
 ul {
   padding: 0px;
@@ -54,16 +52,58 @@ main {
   padding: 25px;
 }
 
-.flex {
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background: #672A4E
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+nav a: hover {
+  color: #000; 
+}
+
+/* .flex {
   display: flex;
 }
 
 .flex--row {
-  flex-direction: row;
-}
+  flex-direction: column;
+} */
 
 
 #content {
-  border-left: 1px solid white;
+  border-left: 1px solid black;
   padding-left: 25px;
 }

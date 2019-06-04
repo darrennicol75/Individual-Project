@@ -2,25 +2,25 @@
   border:0px none;
   border-radius: 3%;
   padding: 8px 12px;
-  color: papayawhip;
+  color: black;
   cursor:pointer;
   font-family: 'Special Elite', cursive;
 }
 
 .btn--danger {
-  background-color: blue;
+  background-color: #0678bc;
 }
 
 .btn--danger:hover {
-  background-color: blue;
+  background-color: #0678bc;
 }
 
 .btn--action:hover {
-  background-color: blue;
+  background-color: #0678bc;
 }
 
 .btn--action {
-  background-color: green;
+  background-color: #C0E0DE;
 }
 
 .btn--wrapper {

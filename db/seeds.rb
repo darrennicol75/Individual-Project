@@ -18,7 +18,7 @@ equipment1.save()
 
 equipment2 = Equipment.new({
   "model" => "O'Neill slingshot",
-  "category" => "Surf Board",
+  "category" => "Kite Board",
   "quantity" => 10,
   "day_rate" => 13
 })

@@ -1,20 +1,21 @@
 input[type="submit"] {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: 'Special Elite', cursive;
-    font-size: 15px;  */
+    font-size: 1.0em;
 }
 
 select {
  width: 150px;
  padding: 5px 35px 5px 5px;
  margin: 15px 0;
- font-size: 0.8em;
+ font-size: 0.7em;
  -webkit-appearance: none;
- background: url('/images/logo03.png') 96% / 15% no-repeat papayawhip;
+ background: url('/images/logo03.png') 96% / 15% no-repeat white;
  font-family: 'Merriweather', serif;
  border: 1px solid #eee;
  display: block;
 }
+
 
 :focus {
   outline-color: transparent;
