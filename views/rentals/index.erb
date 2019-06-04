@@ -1,28 +1,39 @@
 <h1>Rentals</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/rentals/new">New rental!</a>
-</p>
-
-<ul>
+<table>
+  <tr>
+    <th>Customer_id</th>
+    <th></th>
+    <th>Equipment_id</th>
+    <th></th>
+    <th>Hire_duration</th>
+    <th></th>
+    <th>Quantity</th>
+    <th></th>
+    <th>Edit Rental</th>
+    <th></th>
+    <th>Off hire</th>
+  </tr>
   <% for rental in @rentals %>
-  <% for customer in rental.customers %>
+  <% customer = rental.customer(rental.customer_id) %>
+  <tr>
+    <td><a href="/rentals/<%= rental.id %>"><%= customer.name %></a></td>
+    <td>|</td>
+    <td><%= rental.equipment_id %></td>
+    <td>|</td>
+    <td><%= rental.hire_duration %></td>
+    <td>|</td>
+    <td><%= rental.quantity %></td>
+    <td>|</td>
+    <td><a class="btn btn--action" href="/rentals/<%= rental.id %>/edit">Edit rental</a></td>
+    <td>|</td>
+    <td><form action="/rentals/<%= rental.id %>/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="off hire" />
+    </form><td>|</td>
+  </tr>
+  <% end %>
+</table>
 
-
-  <p><%= customer.name %> <%= @actions.sample %>
-    <% end %>
-    <% for item in rental.equipment %>
-    <%= item.model %> </p>
-    <% end %>
-      <form action="/rentals/<%= rental.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-      <form action="/rentals/<%= rental.id %>/edit" method="GET">
-        <input class="btn btn--danger" type="submit" value="edit/return" />
-      </form>
-    <% end %>
-
-</ul>
-
-
-<!-- #this needs sorted for loop is pulling in wrong info -->
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/rentals/new">New Rental</a>
+</p>

@@ -29,6 +29,15 @@
   </label>
 
   <label>
+  Select quantity:
+    <select name="quantity">
+      <% for equipment in @equipment %>
+      <option value="<%= equipment.id %>"><%= equipment.quantity %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
     Select a quantity:
       <input type="number" name ="quantity" min="1" max= "6"></input>
   </label>

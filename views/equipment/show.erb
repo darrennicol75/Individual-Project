@@ -7,7 +7,7 @@
 <p>Quantity: <%= @equipment.quantity %></p>
 
 <ul>
-  <p> Hired too:</p>
+  <p> Hires too:</p>
   <% @equipment.customers.each do |customer| %>
   <li><%= customer.name %></li>
   <% end %>

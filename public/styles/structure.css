@@ -1,8 +1,9 @@
 body {
-  background: #8FE388 url('/images/surf1.gif');
+  background-color: #0678bc;
+  /* background-image: url('/images/surf3.gif'); */
   background-size: 100%;
   background-repeat: no-repeat;
-  color: papayawhip;
+  color: black;
   font-family: 'Merriweather', serif;
   padding: 0px;
   margin: 10px;
@@ -81,20 +82,29 @@ main {
   flex-direction: row;
 }
 
-#menu {
+.menu {
   width: 220px;
   display: flex;
   margin: 0 auto;
 }
 
-/* .menu-item {
-  display: inline-block;
-  flex-grow: 1;
+/* .menu {
+color: #f2f2f2;
+transition: .5s;
 }
-
-#logo {
-  text-align: right;
+.menu a:hover {
+  color: white;
+}
+.menu {
+}
+  width: 28em;
+  height: 3em;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  background-color: #56bce7;
 } */
+
+
 
 
 #content {

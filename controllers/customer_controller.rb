@@ -37,7 +37,9 @@ post '/customers/:id' do #update
 end
 
 post '/customers/:id/delete' do # delete
+  # binding.pry
   customer = Customer.find( params[:id] )
   customer.delete()
-  redirect to '/customers'
+  erb(:"customers/confirm")
+  # redirect to '/customers'
 end

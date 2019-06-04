@@ -9,6 +9,10 @@
     <th>Day_rate</th>
     <th></th>
     <th>Quantity</th>
+    <th></th>
+    <th>Edit Kit</th>
+    <th></th>
+    <th>Delete Kit</th>
   </tr>
   <% for equipment in @equipment %>
   <tr>
@@ -19,12 +23,12 @@
     <td><%= equipment.day_rate %></td>
     <td>|</td>
     <td><%= equipment.quantity %></td>
-    <p class="btn--wrapper">
-      <a class="btn btn--action" href="/equipment/<%= equipment.id %>/edit">Edit equipment</a>
-    </p>
-    <form action="/equipment/<%= equipment.id %>/confirm" method="POST">
+    <td>|</td>
+    <td><a class="btn btn--action" href="/equipment/<%= equipment.id %>/edit">Edit equipment</a></td>
+    <td>|</td>
+    <td><form action="/equipment/<%= equipment.id %>/confirm" method="POST">
       <input class="btn btn--danger" type="submit" value="delete" />
-    </form>
+    </form><td>|</td>
   </tr>
   <% end %>
 </table>

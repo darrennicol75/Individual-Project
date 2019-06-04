@@ -31,7 +31,7 @@ class Rental
   end
 
   def update()
-    sql = "UPDATE equipment
+    sql = "UPDATE rentals
     SET
     (
       equipment_id,
@@ -43,7 +43,7 @@ class Rental
       $1, $2, $3, $4
     )
     WHERE id = $5"
-    values = [@equipment_id, @customer_id, @hire_duration, @quantity]
+    values = [@equipment_id, @customer_id, @hire_duration, @quantity, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -59,6 +59,13 @@ class Rental
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |customer| Customer.new(customer) }
+  end
+
+  def customer(id)
+    sql = "SELECT * FROM customers WHERE id = $1";
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Customer.new( results.first )
   end
 
   def equipment()
@@ -87,7 +94,7 @@ class Rental
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return Equipment.new( results.first )
+    return Rental.new( results.first )
   end
 
   def self.destroy(id)

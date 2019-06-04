@@ -7,6 +7,10 @@
     <th>Account Number</th>
     <th></th>
     <th>Shipping Info</th>
+    <th></th>
+    <th>Edit Customer</th>
+    <th></th>
+    <th>Delete Customer Account</th>
   </tr>
   <% for customer in @customers %>
   <tr>
@@ -15,12 +19,12 @@
     <td><%= customer.account_number %></td>
     <td>|</td>
     <td><%= customer.shipping_info %></td>
-    <p class="btn--wrapper">
-      <a class="btn btn--action" href="/customers/<%= customer.id %>/edit">Edit customer</a>
-    </p>
-    <p class="btn--wrapper">
-      <a class="btn btn--action" href="/customers/<% customer.id %>/delete">Delete Customer</a>
-    </p>
+    <td>|</td>
+    <td><a class="btn btn--action" href="/customers/<%= customer.id %>/edit">Edit customer</a></td>
+    <td>|</td>
+    <td><form action="/customers/<%= customer.id %>/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="delete" />
+    </form><td>|</td>
   </tr>
   <% end %>
 </table>

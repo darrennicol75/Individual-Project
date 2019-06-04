@@ -37,8 +37,9 @@ post '/equipment/:id' do #update
   redirect to '/equipment'
 end
 
-post '/equipment/:id/delete' do # delete
+post '/equipment/:id/confirm' do # delete
   equipment = Equipment.find( params[:id] )
   equipment.delete()
-  redirect to '/equipment'
+  erb(:"equipment/confirm")
+  # redirect to '/equipment'
 end
