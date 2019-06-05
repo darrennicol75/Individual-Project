@@ -7,7 +7,8 @@ CREATE TABLE customers
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
   account_number INT8,
-  shipping_info VARCHAR(255)
+  shipping_info VARCHAR(255),
+  img VARCHAR(255)
 );
 
 CREATE TABLE equipment
@@ -16,7 +17,8 @@ CREATE TABLE equipment
   model VARCHAR(255) not null,
   category VARCHAR(255) not null,
   quantity INT2,
-  day_rate INT4
+  day_rate INT4,
+  img VARCHAR(255)
 );
 
 CREATE TABLE rentals

@@ -2,13 +2,14 @@ require_relative( '../db/sql_runner' )
 
 class Customer
 
-  attr_accessor( :name, :account_number, :shipping_info, :id )
+  attr_accessor( :name, :account_number, :shipping_info, :img, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @account_number = options['account_number'].to_i
     @shipping_info = options['shipping_info']
+    @img = options['img']
   end
 
   def save()
@@ -16,14 +17,15 @@ class Customer
     (
       name,
       account_number,
-      shipping_info
+      shipping_info,
+      img
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @account_number, @shipping_info]
+    values = [@name, @account_number, @shipping_info, @img]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -44,13 +46,14 @@ class Customer
       (
         name,
         account_number,
-        shipping_info
+        shipping_info,
+        img
       ) =
       (
-        $1, $2, $3
+        $1, $2, $3, $4
       )
-      WHERE id = $4"
-      values = [@name, @account_number, @shipping_info, @id]
+      WHERE id = $5"
+      values = [@name, @account_number, @shipping_info, @img, @id]
       SqlRunner.run(sql, values)
     end
 

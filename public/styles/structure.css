@@ -1,6 +1,6 @@
 body {
   background-color: #0678bc;
-  background-image: url('/images/surf.gif');
+  /* background-image: url('/images/surf.gif'); */
   background-size: 100%;
   background-repeat: no-repeat;
   color: black;
@@ -23,17 +23,17 @@ h1 {
 }
 
 a, a:link, a:visited {
-  color: black;
+  color: #FF4E00;
   text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
-  color: black;
+  color: #FF4E00;
 }
 
 nav {
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
   padding-centre: 25px;
 }
 
@@ -51,7 +51,7 @@ ul {
 }
 
 main {
-  padding: 25px;
+  padding: 10px;
 }
 
 .flex {
@@ -64,6 +64,6 @@ main {
 
 
 #content {
-  border-left: 1px solid white;
+  border-left: 10px solid #FF4E00;
   padding-left: 25px;
 }

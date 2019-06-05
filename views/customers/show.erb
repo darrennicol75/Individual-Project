@@ -1,4 +1,4 @@
-<h1>Customer <%= @customer.name %></h1>
+<h1>Customer: <%= @customer.name %></h1>
 
 <p>Account Number: <%= @customer.account_number %></p>
 
@@ -6,7 +6,7 @@
 
 
 <ul>
-  <p> Current Account Hires:</p>
+  <p> Current Carving Sh_t up with a:</p>
   <% @customer.equipment.each do |equipment| %>
   <li><%= equipment.model %></li>
   <% end %>
@@ -14,4 +14,4 @@
 <br>
 <br>
 <br>
-<img src="/images/kelly_slater.jpg" alt="surf shot" style="float:center; width:400px; height:250px">
+<img src = "<%= @customer.img %>" alt="surf image" style="float:center; width:400px; height:250px">

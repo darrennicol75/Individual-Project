@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Equipment
 
-  attr_accessor( :model, :category, :quantity, :day_rate, :id )
+  attr_accessor( :model, :category, :quantity, :day_rate, :img, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -10,6 +10,7 @@ class Equipment
     @category = options['category']
     @quantity = options['quantity'].to_i
     @day_rate = options['day_rate'].to_i
+    @img = options['img']
   end
 
   def save()
@@ -18,14 +19,15 @@ class Equipment
       model,
       category,
       quantity,
-      day_rate
+      day_rate,
+      img
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@model, @category, @quantity, @day_rate]
+    values = [@model, @category, @quantity, @day_rate, @img]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -37,13 +39,14 @@ class Equipment
       model,
       category,
       day_rate,
-      quantity
+      quantity,
+      img
     ) =
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
-    WHERE id = $5"
-    values = [@model, @category, @day_rate, @quantity, @id]
+    WHERE id = $6"
+    values = [@model, @category, @day_rate, @quantity, @img, @id]
     SqlRunner.run(sql, values)
   end
 
