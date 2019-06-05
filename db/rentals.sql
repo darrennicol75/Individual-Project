@@ -29,3 +29,13 @@ CREATE TABLE rentals
   hire_duration INT4,
   quantity INT2
 );
+
+-- CREATE TABLE dashboards
+-- (
+--   id SERIAL8 primary key,
+--   equipment_model VARCHAR(255) references equipment(model) ON DELETE CASCADE,
+--   equipment_category VARCHAR(255) references equipment(category) ON DELETE CASCADE,
+--   equipment_quantity VARCHAR(255) references equipment(quantity) ON DELETE CASCADE,
+--   rental_quantity INT4 references rental(quantity) ON DELETE CASCADE,
+--   total INT2
+-- );

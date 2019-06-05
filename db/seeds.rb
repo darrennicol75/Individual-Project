@@ -122,7 +122,7 @@ customer8.save()
 
 rental1 = Rental.new({
   "customer_id" => customer1.id,
-  "equipment_id" => equipment4.id,
+  "equipment_id" => equipment1.id,
   "hire_duration" => 14,
   "quantity" => 1
 })
@@ -131,7 +131,7 @@ rental1.save()
 
 rental2 = Rental.new({
   "customer_id" => customer2.id,
-  "equipment_id" => equipment3.id,
+  "equipment_id" => equipment2.id,
   "hire_duration" => 7,
   "quantity" => 1
 })
@@ -140,7 +140,7 @@ rental2.save()
 
 rental3 = Rental.new({
   "customer_id" => customer3.id,
-  "equipment_id" => equipment2.id,
+  "equipment_id" => equipment3.id,
   "hire_duration" => 21,
   "quantity" => 1
 })
@@ -149,7 +149,7 @@ rental3.save()
 
 rental4 = Rental.new({
   "customer_id" => customer4.id,
-  "equipment_id" => equipment1.id,
+  "equipment_id" => equipment4.id,
   "hire_duration" => 28,
   "quantity" => 1
 })
@@ -176,7 +176,7 @@ rental6.save()
 
 rental7 = Rental.new({
   "customer_id" => customer7.id,
-  "equipment_id" => equipment1.id,
+  "equipment_id" => equipment2.id,
   "hire_duration" => 21,
   "quantity" => 1
 })
@@ -203,7 +203,7 @@ rental9.save()
 
 rental10 = Rental.new({
   "customer_id" => customer4.id,
-  "equipment_id" => equipment2.id,
+  "equipment_id" => equipment3.id,
   "hire_duration" => 14,
   "quantity" => 1
 })
