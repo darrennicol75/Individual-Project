@@ -1,4 +1,4 @@
-# Individual-Project-Ruby-Sinatra-PostgreSQL
+# Individual-Project
 
 This was the first project which was an individual project to demonstrate capabilities in the following areas: - 
 
