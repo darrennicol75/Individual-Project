@@ -1,6 +1,8 @@
 # Individual-Project-Ruby-Sinatra-PostgreSQL
 
-This was the first project which was an individual project. 
+This was the first project which was an individual project to demonstrate capabilities in the following areas: - 
+
+Ruby-Sinatra-PostgreSQL
 
 From the options I chose the following brief: - 
 
@@ -26,7 +28,7 @@ Create the database
 createdb rentals
 Run database schema
 
-psql -d spending_tracker -f db/rentals.sql
+psql -d rental_shop -f db/rentals.sql
 Run seed file for creation of initial transactions, merchants and categories
 
 ruby db/seeds.rb
